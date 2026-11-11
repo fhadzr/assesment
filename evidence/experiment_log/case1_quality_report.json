@@ -1,0 +1,28 @@
+{
+  "report_version": "1.0.0",
+  "data_dir": "case1_fraud\\data",
+  "dedup_applied": false,
+  "row_counts": {
+    "customers": 200,
+    "transactions": 10100,
+    "devices": 398,
+    "logins": 3333
+  },
+  "join_match_rates": {
+    "transactions.customer_id->customers.customer_id": 0.995149,
+    "devices.customer_id->customers.customer_id": 0.98995,
+    "logins.customer_id->customers.customer_id": 0.990099,
+    "transactions.device_id->devices.device_id": 0.99495,
+    "logins.device_id->devices.device_id": 1.0
+  },
+  "duplicate_transactions": 100,
+  "missing_timestamps": {
+    "devices.first_seen_ts": 4,
+    "logins.ts": 33
+  },
+  "label_prevalence": {
+    "ground_truth_fraud": 0.02,
+    "confirmed_fraud": 0.009109,
+    "blocked": 0.02604
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "table": "logins",
+  "seed": 42,
+  "rows": 3333,
+  "generator_version": "1.0.0",
+  "generated_at_utc": "2026-11-11T13:35:36Z"
+}

@@ -1,0 +1,16 @@
+row_number,_,probability,risk_band,reasons
+2,,0.033651,low,amount 125.84 far above the pool baseline; amount +96.0 std above the customer's own history (burst)
+3,,0.998703,high,amount 825.67 far above the pool baseline; hour 22 unremarkable; amount +28.8 std above the customer's own history (burst)
+4,,0.09321,low,amount 219.46 far above the pool baseline; transaction at odd hour 4; amount +41.4 std above the customer's own history (burst)
+5,,0.059269,low,amount 180.54 far above the pool baseline; hour 22 unremarkable; foreign merchant; amount +86.9 std above the customer's own history (burst)
+6,,1.0,high,transaction at odd hour 0; amount +51940000.0 std above the customer's own history (burst)
+7,,0.006245,low,amount 116.99 far above the pool baseline
+8,,0.003061,low,amount 14.93 low; foreign merchant
+9,,0.002399,low,amount 59.14 low; transaction at odd hour 4
+10,,0.002487,low,amount 53.07 low; transaction at odd hour 2
+11,,0.003716,low,amount 113.01 far above the pool baseline; hour 19 unremarkable
+12,,0.008155,low,amount 120.94 far above the pool baseline; transaction at odd hour 2
+13,,0.002879,low,amount 72.94 low
+14,,0.001039,low,amount 32.08 low
+15,,0.001558,low,amount 75.93 low; hour 23 unremarkable
+16,,0.001715,low,amount 77.18 low

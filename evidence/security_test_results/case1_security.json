@@ -1,0 +1,54 @@
+{
+  "generated_at_utc": "2026-11-11T13:30:49Z",
+  "source_suite": "case1_fraud/tests/test_security.py",
+  "command": "python scripts/export_security_results.py",
+  "summary": {
+    "total": "6",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "exit_code": 0
+  },
+  "assertions": [
+    {
+      "test": "test_api_logs_contain_no_pii",
+      "class": "case1_fraud.tests.test_security.TestNoPIIInLogs",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "test": "test_cli_logs_contain_no_pii",
+      "class": "case1_fraud.tests.test_security.TestNoPIIInLogs",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "test": "test_undeclared_routes_404[/debug]",
+      "class": "case1_fraud.tests.test_security.TestRouteHygiene",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "test": "test_undeclared_routes_404[/admin]",
+      "class": "case1_fraud.tests.test_security.TestRouteHygiene",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "test": "test_no_debug_routes_in_openapi",
+      "class": "case1_fraud.tests.test_security.TestRouteHygiene",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "test": "test_error_responses_never_500",
+      "class": "case1_fraud.tests.test_security.TestRouteHygiene",
+      "status": "pass",
+      "detail": ""
+    }
+  ],
+  "surfaces": [
+    "fastapi_api",
+    "cli"
+  ]
+}

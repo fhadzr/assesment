@@ -53,6 +53,27 @@ check-evidence: ## Enforce evidence + secret conventions
 
 check: check-data check-evidence ## Run all convention checks
 
+# ---- case1 fraud workflow ----
+
+case1-generate: ## Generate case1 relational dataset (seeded)
+	@$(call venv_py,case1_fraud) -m fraud.data.generate --seed 42 --n-customers 200 --n-transactions 10000 --out case1_fraud/data
+
+case1-quality: ## Build case1 join match-rate / data-quality report
+	@$(call venv_py,case1_fraud) -m fraud.data.quality --data-dir case1_fraud/data --out case1_fraud/outputs/quality_report.json
+
+case1-train: ## Train case1 models (baseline + LR + optional HGB), compare, evaluate
+	@$(call venv_py,case1_fraud) -m fraud.model.baseline
+	@$(call venv_py,case1_fraud) -m fraud.model.train
+	@$(call venv_py,case1_fraud) -m fraud.model.train --model hgb --with-hgb --out case1_fraud/outputs/model_hgb
+	@$(call venv_py,case1_fraud) -m fraud.model.compare
+	@$(call venv_py,case1_fraud) -m fraud.model.evaluate --k 100
+
+case1-serve: ## Run case1 FastAPI service (manual)
+	@$(call venv_py,case1_fraud) -m uvicorn fraud.service.app:create_app --factory --app-dir case1_fraud/src --host 127.0.0.1 --port 8000
+
+case1-infer: ## CLI batch inference (usage: make case1-infer IN=... OUT=...)
+	@$(call venv_py,case1_fraud) -m fraud.infer --in $(IN) --model case1_fraud/outputs/model_lr --out $(OUT) --role $(or $(ROLE),analyst)
+
 # ---- clean ----
 
 clean: ## Remove venvs and caches

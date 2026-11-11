@@ -1,0 +1,26 @@
+{
+  "table": "transactions",
+  "seed": 42,
+  "rows": 10100,
+  "generator_version": "1.0.0",
+  "generated_at_utc": "2026-11-11T13:35:36Z",
+  "fraud_rate": 0.02,
+  "confirmed_rate": 0.5,
+  "duplicate_rate": 0.01,
+  "mismatch_rate": 0.01,
+  "missing_ts_rate": 0.01,
+  "label_prevalence": {
+    "ground_truth_fraud": 0.02,
+    "confirmed_fraud": 0.009108910891089108,
+    "blocked": 0.02603960396039604
+  },
+  "defects_injected": {
+    "dangling_ids": 137,
+    "duplicate_transactions": 100,
+    "missing_timestamps": 37
+  },
+  "label_semantics": {
+    "blocked": "noisy operational proxy (80% fraud catch-rate + legit-tail false positives)",
+    "confirmed_fraud": "ground-truth fraud thinned by confirmed_rate; never derived from blocked"
+  }
+}

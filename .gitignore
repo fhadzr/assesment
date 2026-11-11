@@ -47,5 +47,8 @@ case3_rag/data/*
 !case2_docintel/samples/.gitkeep
 !case2_docintel/expected/.gitkeep
 !case3_rag/data/.gitkeep
-!**/manifest.json
+!case1_fraud/data/*_manifest.json
+!case2_docintel/samples/*_manifest.json
+!case2_docintel/expected/*_manifest.json
+!case3_rag/data/*_manifest.json
 !**/seed.txt

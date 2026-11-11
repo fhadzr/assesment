@@ -1,0 +1,56 @@
+{
+  "comparison_version": "1.0.0",
+  "created_at_utc": "2026-11-11T13:36:25Z",
+  "test_set": {
+    "n_rows": 1500,
+    "manifest_hash": "116aeb783498e86a",
+    "first_ts": "2026-05-16T11:41:00Z",
+    "last_ts": "2026-05-29T23:49:00Z",
+    "identical_row_set_asserted": true
+  },
+  "required_models_present": {
+    "rule_baseline": true,
+    "logistic_regression": true
+  },
+  "models": {
+    "rule_baseline": {
+      "n_test_rows": 1500,
+      "confirmed_fraud": {
+        "n_positive": 15,
+        "pr_auc": 0.203656,
+        "roc_auc_supplementary": 0.95789
+      },
+      "blocked": {
+        "n_positive": 44,
+        "pr_auc": 0.515303,
+        "roc_auc_supplementary": 0.932052
+      }
+    },
+    "logistic_regression": {
+      "n_test_rows": 1500,
+      "confirmed_fraud": {
+        "n_positive": 15,
+        "pr_auc": 0.298634,
+        "roc_auc_supplementary": 0.980831
+      },
+      "blocked": {
+        "n_positive": 44,
+        "pr_auc": 0.690498,
+        "roc_auc_supplementary": 0.992398
+      }
+    },
+    "hist_gradient_boosting": {
+      "n_test_rows": 1500,
+      "confirmed_fraud": {
+        "n_positive": 15,
+        "pr_auc": 0.170189,
+        "roc_auc_supplementary": 0.97064
+      },
+      "blocked": {
+        "n_positive": 44,
+        "pr_auc": 0.689623,
+        "roc_auc_supplementary": 0.990166
+      }
+    }
+  }
+}
