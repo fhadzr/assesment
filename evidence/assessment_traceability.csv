@@ -1,0 +1,53 @@
+requirement_id,rubric_area,criterion,points,case,scenario_id,implementation_location,test_location,evidence_artifact,verification_status
+C1-01,Case 1: Fraud Risk Prediction,Synthetic transaction dataset generator (reproducible via seed),,case1_fraud,,case1_fraud/src/,case1_fraud/tests/test_data_generation.py,evidence/experiment_log/,pending
+C1-02,Case 1: Fraud Risk Prediction,Fraud risk model training pipeline (scikit-learn),,case1_fraud,,case1_fraud/src/,case1_fraud/tests/test_model.py,evidence/experiment_log/,pending
+C1-03,Case 1: Fraud Risk Prediction,Evaluation with reproducible metrics from executable script,,case1_fraud,,case1_fraud/src/,case1_fraud/tests/test_evaluation.py,case1_fraud/outputs/ + evidence/experiment_log/,pending
+C1-04,Case 1: Fraud Risk Prediction,FastAPI prediction endpoint,,case1_fraud,,case1_fraud/src/,case1_fraud/tests/test_api.py,case1_fraud/outputs/,pending
+C1-05,Case 1: Fraud Risk Prediction,Architecture diagram,,case1_fraud,,,,case1_fraud/docs/,pending
+C1-06,Case 1: Fraud Risk Prediction,Data map,,case1_fraud,,,,case1_fraud/docs/,pending
+C1-07,Case 1: Fraud Risk Prediction,Security tests,,case1_fraud,,case1_fraud/src/,case1_fraud/tests/test_security.py,evidence/security_test_results/,pending
+C1-08,Case 1: Fraud Risk Prediction,Cost estimate,,case1_fraud,,,case1_fraud/docs/,evidence/cost_analysis/,pending
+C1-09,Case 1: Fraud Risk Prediction,Limitations documented,,case1_fraud,,,,case1_fraud/docs/,pending
+C2-01,Case 2: Document Intelligence,Synthetic document samples corpus,,case2_docintel,,case2_docintel/samples/,case2_docintel/tests/test_ingestion.py,case2_docintel/expected/,pending
+C2-02,Case 2: Document Intelligence,Document ingestion and parsing pipeline,,case2_docintel,,case2_docintel/src/,case2_docintel/tests/test_ingestion.py,case2_docintel/outputs/,pending
+C2-03,Case 2: Document Intelligence,Information extraction validated against expected outputs,,case2_docintel,,case2_docintel/src/,case2_docintel/tests/test_extraction.py,case2_docintel/expected/ + case2_docintel/outputs/,pending
+C2-04,Case 2: Document Intelligence,Evaluation with reproducible metrics from executable script,,case2_docintel,,case2_docintel/src/,case2_docintel/tests/test_evaluation.py,case2_docintel/outputs/ + evidence/experiment_log/,pending
+C2-05,Case 2: Document Intelligence,FastAPI extraction endpoint,,case2_docintel,,case2_docintel/src/,case2_docintel/tests/test_api.py,case2_docintel/outputs/,pending
+C2-06,Case 2: Document Intelligence,Architecture diagram,,case2_docintel,,,,case2_docintel/docs/,pending
+C2-07,Case 2: Document Intelligence,Data map,,case2_docintel,,,,case2_docintel/docs/,pending
+C2-08,Case 2: Document Intelligence,Security tests,,case2_docintel,,case2_docintel/src/,case2_docintel/tests/test_security.py,evidence/security_test_results/,pending
+C2-09,Case 2: Document Intelligence,Cost estimate,,case2_docintel,,,case2_docintel/docs/,evidence/cost_analysis/,pending
+C2-10,Case 2: Document Intelligence,Limitations documented,,case2_docintel,,,,case2_docintel/docs/,pending
+C3-01,Case 3: Enterprise RAG Chatbot,Synthetic enterprise knowledge corpus,,case3_rag,,case3_rag/data/,case3_rag/tests/test_corpus.py,case3_rag/data/,pending
+C3-02,Case 3: Enterprise RAG Chatbot,Ingestion and chunking pipeline,,case3_rag,,case3_rag/src/,case3_rag/tests/test_ingestion.py,case3_rag/outputs/,pending
+C3-03,Case 3: Enterprise RAG Chatbot,Embedding and vector store integration (Chroma or FAISS),,case3_rag,,case3_rag/src/,case3_rag/tests/test_vector_store.py,case3_rag/outputs/,pending
+C3-04,Case 3: Enterprise RAG Chatbot,Retrieval with access control applied before LLM context construction,,case3_rag,,case3_rag/src/,case3_rag/tests/test_access_control.py + case3_rag/tests/test_retrieval.py,case3_rag/outputs/,pending
+C3-05,Case 3: Enterprise RAG Chatbot,Generation with pluggable LLM provider (mock in tests),,case3_rag,,case3_rag/src/,case3_rag/tests/test_generation.py,case3_rag/outputs/,pending
+C3-06,Case 3: Enterprise RAG Chatbot,FastAPI chat endpoint,,case3_rag,,case3_rag/src/,case3_rag/tests/test_api.py,case3_rag/outputs/,pending
+C3-07,Case 3: Enterprise RAG Chatbot,Evaluation (retrieval + end-to-end reproducible metrics),,case3_rag,,case3_rag/src/,case3_rag/tests/test_evaluation.py,case3_rag/outputs/ + evidence/experiment_log/,pending
+C3-08,Case 3: Enterprise RAG Chatbot,Architecture diagram,,case3_rag,,,,case3_rag/docs/,pending
+C3-09,Case 3: Enterprise RAG Chatbot,Data map,,case3_rag,,,,case3_rag/docs/,pending
+C3-10,Case 3: Enterprise RAG Chatbot,Security tests,,case3_rag,,case3_rag/src/,case3_rag/tests/test_security.py,evidence/security_test_results/,pending
+C3-11,Case 3: Enterprise RAG Chatbot,Cost estimate,,case3_rag,,,case3_rag/docs/,evidence/cost_analysis/,pending
+C3-12,Case 3: Enterprise RAG Chatbot,Limitations documented,,case3_rag,,,,case3_rag/docs/,pending
+PS-01,Privacy by Design and Security,No secrets in source code,,cross-case,,scripts/check_evidence_conventions.py,tests/test_convention_checkers.py,evidence/security_test_results/,pending
+PS-02,Privacy by Design and Security,No PII in logs,,cross-case,,src/ logging config,log-content assertions in tests,evidence/security_test_results/,pending
+PS-03,Privacy by Design and Security,Access control enforced before LLM context construction,,case3_rag,,case3_rag/src/,case3_rag/tests/test_access_control.py,evidence/security_test_results/,pending
+PS-04,Privacy by Design and Security,Mock LLM providers used in all automated tests,,cross-case,,docs/conventions/security.md,tests/test_convention_checkers.py,evidence/experiment_log/,pending
+PS-05,Privacy by Design and Security,No transmission of confidential data without authorization,,cross-case,,src/ provider guard,authorization assertions in tests,evidence/security_test_results/,pending
+AE-01,Architecture and Engineering,Spec-driven workflow (OpenSpec changes approved before implementation),,cross-case,,openspec/changes/,scripts/check_evidence_conventions.py,evidence/assessment_traceability.csv,pending
+AE-02,Architecture and Engineering,Tests updated alongside implementation (one logical task at a time),,cross-case,,case1_fraud/src/ + case2_docintel/src/ + case3_rag/src/,case1_fraud/tests/ + case2_docintel/tests/ + case3_rag/tests/ + tests/test_convention_checkers.py,evidence/experiment_log/foundation_setup.md,pending
+AE-03,Architecture and Engineering,Synthetic reproducible datasets for all cases,,cross-case,,scripts/check_data_conventions.py,tests/test_convention_checkers.py,evidence/experiment_log/,pending
+AE-04,Architecture and Engineering,All metrics reproducible from executable scripts,,cross-case,,scripts/check_data_conventions.py + scripts/check_evidence_conventions.py,tests/test_convention_checkers.py,evidence/experiment_log/,pending
+AE-05,Architecture and Engineering,Assumptions limitations and design decisions documented per case,,cross-case,,docs/conventions/,scripts/check_evidence_conventions.py,evidence/assessment_traceability.csv,pending
+SC-01,Critical Thinking Scenario 1,Scenario 1 answer grounded in prototype evidence,,n/a,S1,scenarios/S1.md,scenario-specific tests (where applicable),evidence/ + referenced case outputs,pending
+SC-02,Critical Thinking Scenario 2,Scenario 2 answer grounded in prototype evidence,,n/a,S2,scenarios/S2.md,scenario-specific tests (where applicable),evidence/ + referenced case outputs,pending
+SC-03,Critical Thinking Scenario 3,Scenario 3 answer grounded in prototype evidence,,n/a,S3,scenarios/S3.md,scenario-specific tests (where applicable),evidence/ + referenced case outputs,pending
+SC-04,Critical Thinking Scenario 4,Scenario 4 answer grounded in prototype evidence,,n/a,S4,scenarios/S4.md,scenario-specific tests (where applicable),evidence/ + referenced case outputs,pending
+SC-05,Critical Thinking Scenario 5,Scenario 5 answer grounded in prototype evidence,,n/a,S5,scenarios/S5.md,scenario-specific tests (where applicable),evidence/ + referenced case outputs,pending
+SC-06,Critical Thinking Scenario 6,Scenario 6 answer grounded in prototype evidence,,n/a,S6,scenarios/S6.md,scenario-specific tests (where applicable),evidence/ + referenced case outputs,pending
+FD-01,Architecture and Engineering,Monorepo layout with per-case isolation (pyproject src-layout per case),,cross-case,,case1_fraud/pyproject.toml + case2_docintel/pyproject.toml + case3_rag/pyproject.toml,tests/test_convention_checkers.py,evidence/experiment_log/foundation_setup.md,pending
+FD-02,Architecture and Engineering,Root pytest configuration with deterministic offline test discovery,,cross-case,,pytest.ini,case1_fraud/tests/test_smoke.py + case2_docintel/tests/test_smoke.py + case3_rag/tests/test_smoke.py,evidence/experiment_log/foundation_setup.md,pending
+FD-03,Architecture and Engineering,Makefile workflow targets executable on Windows and Unix,,cross-case,,Makefile,evidence/experiment_log/foundation_setup.md,evidence/experiment_log/foundation_setup.md,pending
+FD-04,Architecture and Engineering,Executable data-convention checker (R1-R3),,cross-case,,scripts/check_data_conventions.py,tests/test_convention_checkers.py,evidence/experiment_log/foundation_setup.md,pending
+FD-05,Architecture and Engineering,Executable evidence-convention and secret-scan checker (E1-E4 S1),,cross-case,,scripts/check_evidence_conventions.py,tests/test_convention_checkers.py,evidence/experiment_log/foundation_setup.md,pending

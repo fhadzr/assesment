@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Test / tooling caches
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Environment / secrets - never commit
+.env
+*.env
+.env.*
+secrets.*
+*.pem
+*.key
+
+# OS noise
+Thumbs.db
+.DS_Store
+
+# Case outputs are generated; evidence copies under evidence/ are the tracked artifacts
+case1_fraud/outputs/*
+case2_docintel/outputs/*
+case3_rag/outputs/*
+!case1_fraud/outputs/.gitkeep
+!case2_docintel/outputs/.gitkeep
+!case3_rag/outputs/.gitkeep
+
+# Generated data: everything except regeneration manifests
+case1_fraud/data/*
+case2_docintel/samples/*
+case2_docintel/expected/*
+case3_rag/data/*
+!case1_fraud/data/.gitkeep
+!case2_docintel/samples/.gitkeep
+!case2_docintel/expected/.gitkeep
+!case3_rag/data/.gitkeep
+!**/manifest.json
+!**/seed.txt

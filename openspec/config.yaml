@@ -1,0 +1,42 @@
+schema: spec-driven
+
+context: |
+  Project: V-TEKI AI Solution Engineer Assessment.
+
+  Three mandatory prototypes:
+  - Fraud Risk Prediction
+  - Document Intelligence
+  - Enterprise RAG Chatbot
+
+  Python-based implementation.
+  FastAPI for required APIs.
+  pytest for automated testing.
+
+  All datasets must be synthetic.
+  All metrics must be reproducible.
+  No fabricated results.
+
+  Every case must include:
+  - Architecture diagram
+  - Data map
+  - Security tests
+  - Evaluation
+  - Cost estimate
+  - Limitations
+
+  Critical thinking answers must use
+  actual prototype evidence.
+
+rules:
+  proposal:
+    - Map requirements to assessment rubric.
+    - Prioritize runnable MVP.
+  specs:
+    - Use measurable acceptance criteria.
+    - Include negative test scenarios.
+  design:
+    - Document privacy and security.
+    - Include data flow.
+  tasks:
+    - Keep tasks independently testable.
+    - Prioritize mandatory requirements.
