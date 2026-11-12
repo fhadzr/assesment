@@ -21,6 +21,10 @@ The system SHALL extract document text via a PDF text layer extractor for text-b
 - **WHEN** the OCR binary is not installed and an image document is ingested
 - **THEN** the result carries status `ocr_unavailable` for that document with a clear message, and no OCR text is invented
 
+#### Scenario: OCR path is genuinely runnable when the binary exists
+- **WHEN** the Tesseract binary is installed (per the documented setup) and an image invoice is ingested
+- **THEN** the OCR implementation executes the real engine over the image and the extracted fields come from actual OCR output; the test suite covers both binary-present and binary-absent outcomes, with the binary-present path exercised via an explicit probe override when the host lacks the binary
+
 #### Scenario: Negative - unreadable file reported
 - **WHEN** a corrupt or empty document is ingested
 - **THEN** extraction returns a per-document error status instead of raising or returning empty success
@@ -88,3 +92,7 @@ Extracted values SHALL pass deterministic validation independent of the LLM: typ
 #### Scenario: Review queue is reviewable
 - **WHEN** a batch produces documents with non-extracted fields
 - **THEN** a review report lists each document, its fields' statuses, and reasons, writable as a JSON artifact
+
+#### Scenario: Review entries are self-contained
+- **WHEN** a review-queue entry is inspected
+- **THEN** it contains the document/invoice id, the field name, the extracted value (or null), the validation status, and the human-readable review reason(s) — adjudicable without re-opening the document

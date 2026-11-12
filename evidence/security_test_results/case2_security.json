@@ -1,0 +1,54 @@
+{
+  "generated_at_utc": "2026-11-12T04:14:25Z",
+  "source_suite": "case2_docintel/tests/test_security.py",
+  "command": "python scripts/export_security_results.py case2_docintel",
+  "summary": {
+    "total": "6",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "exit_code": 0
+  },
+  "assertions": [
+    {
+      "test": "test_disguised_upload_rejected",
+      "class": "case2_docintel.tests.test_security",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "test": "test_size_limit_rejected",
+      "class": "case2_docintel.tests.test_security",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "test": "test_pii_safe_logging",
+      "class": "case2_docintel.tests.test_security",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "test": "test_undeclared_routes_404[/debug]",
+      "class": "case2_docintel.tests.test_security",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "test": "test_undeclared_routes_404[/admin]",
+      "class": "case2_docintel.tests.test_security",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "test": "test_no_debug_routes_in_openapi",
+      "class": "case2_docintel.tests.test_security",
+      "status": "pass",
+      "detail": ""
+    }
+  ],
+  "surfaces": [
+    "fastapi_api",
+    "cli"
+  ]
+}

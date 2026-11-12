@@ -1,0 +1,23 @@
+{
+  "corpus": "synthetic_invoices",
+  "seed": 42,
+  "n_invoices": 20,
+  "generator_version": "1.0.0",
+  "layout_variants": 3,
+  "fields": [
+    "invoice_number",
+    "invoice_date",
+    "vendor_name",
+    "subtotal",
+    "tax",
+    "total",
+    "currency",
+    "due_date"
+  ],
+  "maskable_pii_in_documents": [
+    "contact_email",
+    "contact_phone",
+    "account_reference"
+  ],
+  "notes": "no real vendors or PII; all names fabricated from seeded word lists"
+}

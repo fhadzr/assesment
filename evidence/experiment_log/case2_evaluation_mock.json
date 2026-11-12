@@ -1,0 +1,65 @@
+{
+  "eval_version": "1.0.0",
+  "created_at_utc": "2026-11-12T04:18:02Z",
+  "command": "python -m docintel.evaluate --provider mock",
+  "corpus": {
+    "n_documents": 20,
+    "path": "case2_docintel",
+    "provider_label": "mock"
+  },
+  "field_accuracy": {
+    "invoice_number": 1.0,
+    "invoice_date": 1.0,
+    "vendor_name": 1.0,
+    "subtotal": 1.0,
+    "tax": 1.0,
+    "total": 1.0,
+    "currency": 1.0,
+    "due_date": 1.0
+  },
+  "missing_rate": {
+    "invoice_number": 0.0,
+    "invoice_date": 0.0,
+    "vendor_name": 0.0,
+    "subtotal": 0.0,
+    "tax": 0.0,
+    "total": 0.0,
+    "currency": 0.0,
+    "due_date": 0.0
+  },
+  "error_breakdown": {
+    "ok": 20
+  },
+  "latency_ms": {
+    "per_document": [
+      6,
+      3,
+      3,
+      3,
+      3,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      3,
+      2,
+      3,
+      2,
+      10,
+      3,
+      3,
+      4
+    ],
+    "mean": 3.2
+  },
+  "usage": {
+    "tokens": 0,
+    "cost": 0.0,
+    "basis": "mock-zero-by-construction",
+    "provider": "mock",
+    "model": null
+  }
+}

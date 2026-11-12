@@ -30,7 +30,7 @@ Every generated invoice SHALL have an expected JSON label file containing exactl
 
 #### Scenario: Labels match rendered content
 - **WHEN** any invoice's rendered text is compared with its expected JSON
-- **THEN** each of the eight field values appears verbatim in the document text and the JSON parses against the published schema
+- **THEN** each of the eight field values appears in the document text — verbatim for non-date fields, and for date fields their normalized ISO form is recoverable from one of the rendered date formats — and the JSON parses against the published schema
 
 #### Scenario: Cross-field consistency in ground truth
 - **WHEN** expected labels are validated

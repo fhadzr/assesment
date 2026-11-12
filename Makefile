@@ -53,6 +53,17 @@ check-evidence: ## Enforce evidence + secret conventions
 
 check: check-data check-evidence ## Run all convention checks
 
+# ---- case2 docintel workflow ----
+
+case2-corpus: ## Generate case2 synthetic invoice corpus
+	@$(call venv_py,case2_docintel) -m docintel.corpus.generate --seed 42 --n-invoices 20 --out case2_docintel
+
+case2-evaluate: ## Run case2 evaluation (mock provider, offline)
+	@$(call venv_py,case2_docintel) -m docintel.evaluate --corpus case2_docintel --provider mock --out case2_docintel/outputs/evaluation.json
+
+case2-serve: ## Run case2 FastAPI service (manual)
+	@$(call venv_py,case2_docintel) -m uvicorn docintel.service.app:create_app --factory --app-dir case2_docintel/src --host 127.0.0.1 --port 8001
+
 # ---- case1 fraud workflow ----
 
 case1-generate: ## Generate case1 relational dataset (seeded)

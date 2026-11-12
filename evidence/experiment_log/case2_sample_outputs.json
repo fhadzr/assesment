@@ -1,0 +1,41 @@
+{
+  "summary": {
+    "total": 40,
+    "ok": 20,
+    "review": 0,
+    "ocr_unavailable": 20
+  },
+  "clean_example": {
+    "document_id": "inv_0000",
+    "status": "ok",
+    "fields": {
+      "invoice_number": "INV-100001",
+      "invoice_date": "2026-03-15",
+      "due_date": "2026-03-22",
+      "vendor_name": "Amberline Trading",
+      "subtotal": "3754.80",
+      "tax": "413.03",
+      "total": "4167.83",
+      "currency": "USD"
+    },
+    "field_statuses": {
+      "invoice_number": "extracted",
+      "invoice_date": "extracted",
+      "vendor_name": "extracted",
+      "subtotal": "extracted",
+      "tax": "extracted",
+      "total": "extracted",
+      "currency": "extracted",
+      "due_date": "extracted"
+    },
+    "review": [],
+    "usage": {
+      "tokens": 0,
+      "cost": 0.0,
+      "cost_basis": "mock-zero-by-construction",
+      "provider": "mock"
+    },
+    "error": null
+  },
+  "review_examples": []
+}

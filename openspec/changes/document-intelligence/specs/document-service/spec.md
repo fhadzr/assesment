@@ -74,6 +74,10 @@ Evaluation SHALL run as a script over the corpus producing per-field accuracy (v
 - **WHEN** provider metadata is available
 - **THEN** token counts and cost come from the provider's response fields; when the provider is mock, the report states zero tokens/zero cost by construction rather than estimating
 
+#### Scenario: Missing metadata is null, never zero
+- **WHEN** a real provider's response carries no usage metadata
+- **THEN** the evaluation reports tokens and cost as null with an explicit unavailable cost basis, not zeros or estimates
+
 #### Scenario: Negative - evaluation without corpus fails
 - **WHEN** the evaluation script runs with no corpus present
 - **THEN** it exits non-zero stating the corpus is missing
