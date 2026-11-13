@@ -1,0 +1,23 @@
+{
+  "corpus": "synthetic_enterprise_kb",
+  "seed": 42,
+  "n_docs": 10,
+  "generator_version": "1.0.0",
+  "domains": [
+    "Finance",
+    "HR",
+    "IT",
+    "Legal"
+  ],
+  "injection_docs": [
+    "hr-002"
+  ],
+  "role_vocabulary": {
+    "caller_roles": [
+      "hr",
+      "finance",
+      "exec"
+    ],
+    "permission_metadata": "all"
+  }
+}

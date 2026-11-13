@@ -18,18 +18,18 @@ C2-07,Case 2: Document Intelligence,Data map,,case2_docintel,,case2_docintel/doc
 C2-08,Case 2: Document Intelligence,Security tests,,case2_docintel,,case2_docintel/tests/test_security.py,case2_docintel/tests/test_security.py,evidence/security_test_results/case2_security.json,verified
 C2-09,Case 2: Document Intelligence,Cost estimate,,case2_docintel,,case2_docintel/docs/cost.md,case2_docintel/docs/,evidence/experiment_log/case2_evaluation_mock.json,verified
 C2-10,Case 2: Document Intelligence,Limitations documented,,case2_docintel,,case2_docintel/docs/limitations.md,,case2_docintel/docs/limitations.md,verified
-C3-01,Case 3: Enterprise RAG Chatbot,Synthetic enterprise knowledge corpus,,case3_rag,,case3_rag/data/,case3_rag/tests/test_corpus.py,case3_rag/data/,pending
-C3-02,Case 3: Enterprise RAG Chatbot,Ingestion and chunking pipeline,,case3_rag,,case3_rag/src/,case3_rag/tests/test_ingestion.py,case3_rag/outputs/,pending
-C3-03,Case 3: Enterprise RAG Chatbot,Embedding and vector store integration (Chroma or FAISS),,case3_rag,,case3_rag/src/,case3_rag/tests/test_vector_store.py,case3_rag/outputs/,pending
-C3-04,Case 3: Enterprise RAG Chatbot,Retrieval with access control applied before LLM context construction,,case3_rag,,case3_rag/src/,case3_rag/tests/test_access_control.py + case3_rag/tests/test_retrieval.py,case3_rag/outputs/,pending
-C3-05,Case 3: Enterprise RAG Chatbot,Generation with pluggable LLM provider (mock in tests),,case3_rag,,case3_rag/src/,case3_rag/tests/test_generation.py,case3_rag/outputs/,pending
-C3-06,Case 3: Enterprise RAG Chatbot,FastAPI chat endpoint,,case3_rag,,case3_rag/src/,case3_rag/tests/test_api.py,case3_rag/outputs/,pending
-C3-07,Case 3: Enterprise RAG Chatbot,Evaluation (retrieval + end-to-end reproducible metrics),,case3_rag,,case3_rag/src/,case3_rag/tests/test_evaluation.py,case3_rag/outputs/ + evidence/experiment_log/,pending
-C3-08,Case 3: Enterprise RAG Chatbot,Architecture diagram,,case3_rag,,,,case3_rag/docs/,pending
-C3-09,Case 3: Enterprise RAG Chatbot,Data map,,case3_rag,,,,case3_rag/docs/,pending
-C3-10,Case 3: Enterprise RAG Chatbot,Security tests,,case3_rag,,case3_rag/src/,case3_rag/tests/test_security.py,evidence/security_test_results/,pending
-C3-11,Case 3: Enterprise RAG Chatbot,Cost estimate,,case3_rag,,,case3_rag/docs/,evidence/cost_analysis/,pending
-C3-12,Case 3: Enterprise RAG Chatbot,Limitations documented,,case3_rag,,,,case3_rag/docs/,pending
+C3-01,Case 3: Enterprise RAG Chatbot,Synthetic enterprise knowledge corpus,,case3_rag,,case3_rag/src/rag/generate_kb.py,case3_rag/tests/test_kb.py,case3_rag/data/kb_manifest.json,verified
+C3-02,Case 3: Enterprise RAG Chatbot,Ingestion and chunking pipeline,,case3_rag,,case3_rag/src/rag/generate_eval.py,case3_rag/tests/test_eval_dataset.py,case3_rag/data/eval_manifest.json,verified
+C3-03,Case 3: Enterprise RAG Chatbot,Embedding and vector store integration (Chroma or FAISS),,case3_rag,,case3_rag/src/rag/retrieval.py + case3_rag/src/rag/roles.py,case3_rag/tests/test_retrieval.py + case3_rag/tests/test_access_control.py,evidence/experiment_log/case3_evaluation_mock.json,verified
+C3-04,Case 3: Enterprise RAG Chatbot,Retrieval with access control applied before LLM context construction,,case3_rag,,case3_rag/src/rag/answering.py + case3_rag/src/rag/core.py,case3_rag/tests/test_injection.py,evidence/security_test_results/case3_security.json,verified
+C3-05,Case 3: Enterprise RAG Chatbot,Generation with pluggable LLM provider (mock in tests),,case3_rag,,case3_rag/src/rag/core.py,case3_rag/tests/test_answering.py + case3_rag/tests/test_core.py,evidence/experiment_log/case3_sample_qa.json,verified
+C3-06,Case 3: Enterprise RAG Chatbot,FastAPI chat endpoint,,case3_rag,,case3_rag/src/rag/evaluate.py,case3_rag/tests/test_evaluation.py,evidence/experiment_log/case3_evaluation_mock.json,verified
+C3-07,Case 3: Enterprise RAG Chatbot,Evaluation (retrieval + end-to-end reproducible metrics),,case3_rag,,case3_rag/src/rag/service/app.py + case3_rag/src/rag/cli.py,case3_rag/tests/test_api.py + case3_rag/tests/test_cli.py,evidence/experiment_log/case3_sample_qa.json,verified
+C3-08,Case 3: Enterprise RAG Chatbot,Architecture diagram,,case3_rag,,case3_rag/src/rag/retrieval.py + case3_rag/src/rag/roles.py,case3_rag/tests/test_security.py + case3_rag/tests/test_logging.py,evidence/security_test_results/case3_security.json,verified
+C3-09,Case 3: Enterprise RAG Chatbot,Data map,,case3_rag,,case3_rag/docs/architecture.md,,case3_rag/docs/architecture.md,verified
+C3-10,Case 3: Enterprise RAG Chatbot,Security tests,,case3_rag,,case3_rag/docs/limitations.md,case3_rag/tests/test_security.py,case3_rag/docs/limitations.md,verified
+C3-11,Case 3: Enterprise RAG Chatbot,Cost estimate,,case3_rag,,case3_rag/docs/README.md,case3_rag/docs/,case3_rag/docs/README.md,verified
+C3-12,Case 3: Enterprise RAG Chatbot,Limitations documented,,case3_rag,,case3_rag/docs/README.md,,case3_rag/docs/README.md,verified
 PS-01,Privacy by Design and Security,No secrets in source code,,cross-case,,scripts/check_evidence_conventions.py,tests/test_convention_checkers.py,evidence/security_test_results/,pending
 PS-02,Privacy by Design and Security,No PII in logs,,cross-case,,src/ logging config,log-content assertions in tests,evidence/security_test_results/,pending
 PS-03,Privacy by Design and Security,Access control enforced before LLM context construction,,case3_rag,,case3_rag/src/,case3_rag/tests/test_access_control.py,evidence/security_test_results/,pending
@@ -61,3 +61,6 @@ C2-11,Case 2: Document Intelligence,PII masking before LLM context construction,
 C2-12,Case 2: Document Intelligence,Pluggable LLM providers (mock/ollama/groq) with honest usage metadata,,case2_docintel,,case2_docintel/src/docintel/providers.py,case2_docintel/tests/test_providers.py,evidence/experiment_log/case2_evaluation_mock.json,verified
 C2-13,Case 2: Document Intelligence,Deterministic validation + field status + human-review queue,,case2_docintel,,case2_docintel/src/docintel/validation.py,case2_docintel/tests/test_validation.py + case2_docintel/tests/test_core.py,evidence/experiment_log/case2_sample_outputs.json,verified
 C2-14,Case 2: Document Intelligence,OCR path with honest degradation (binary-present/absent both tested),,case2_docintel,,case2_docintel/src/docintel/pipeline.py,case2_docintel/tests/test_ocr.py,case2_docintel/docs/ocr_setup.md,verified
+C3-13,Case 3: Enterprise RAG Chatbot,Access control applied before LLM context construction (ACL-first retrieval),,case3_rag,,case3_rag/src/rag/retrieval.py + case3_rag/src/rag/roles.py,case3_rag/tests/test_access_control.py + case3_rag/tests/test_security.py,evidence/security_test_results/case3_security.json,verified
+C3-14,Case 3: Enterprise RAG Chatbot,"Prompt-injection defense (untrusted content, grounded output)",,case3_rag,,case3_rag/src/rag/answering.py + case3_rag/src/rag/core.py,case3_rag/tests/test_injection.py + case3_rag/tests/test_security.py,evidence/security_test_results/case3_security.json,verified
+C3-15,Case 3: Enterprise RAG Chatbot,Grounded answering with citation + generic refusal,,case3_rag,,case3_rag/src/rag/core.py,case3_rag/tests/test_answering.py + case3_rag/tests/test_core.py,evidence/experiment_log/case3_sample_qa.json,verified

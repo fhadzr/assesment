@@ -1,0 +1,63 @@
+{
+  "eval_version": "1.1.0",
+  "created_at_utc": "2026-11-13T04:08:25Z",
+  "command": "python -m rag.evaluate --provider mock",
+  "provider": "mock",
+  "k": 3,
+  "n_questions": 36,
+  "metric_definitions": {
+    "recall3": "|expected_citations found in top-3| / |expected_citations|; retrieval-quality metric, reported per label; N/A (null) for `restricted` because the expected document is intentionally withheld by ACL (security outcome, not retrieval failure)",
+    "citation_precision": "|answer citations inside retrieved permitted set| / |answer citations|; null when the answer has no citations",
+    "citation_recall": "|expected citations present in the answer| / |expected citations|; N/A (null) for `restricted` (same ACL rationale as recall3)",
+    "correct_refusal_rate": "proportion of unanswerable+restricted questions correctly refused",
+    "answerable_non_refusal_rate": "proportion of answerable questions answered without refusal",
+    "faithfulness_heuristic": "lexical-overlap heuristic (answer tokens covered by retrieved snippets); mock-labeled; NOT a factual-correctness guarantee for real providers"
+  },
+  "per_label": {
+    "answerable": {
+      "n": 18,
+      "recall3": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 1.0,
+      "faithfulness_heuristic": 1.0,
+      "refusal_quality": {
+        "refused": 0.0
+      },
+      "latency_ms_mean": 0.12
+    },
+    "unanswerable": {
+      "n": 9,
+      "recall3": null,
+      "citation_precision": null,
+      "citation_recall": null,
+      "faithfulness_heuristic": null,
+      "refusal_quality": {
+        "refused": 1.0
+      },
+      "latency_ms_mean": 0.111778
+    },
+    "restricted": {
+      "n": 9,
+      "recall3": null,
+      "citation_precision": null,
+      "citation_recall": null,
+      "faithfulness_heuristic": null,
+      "refusal_quality": {
+        "refused": 1.0
+      },
+      "latency_ms_mean": 0.127444
+    }
+  },
+  "refusal_quality": {
+    "correct_refusal_rate": 1.0,
+    "answerable_non_refusal_rate": 1.0
+  },
+  "latency_ms": {
+    "mean": 0.12,
+    "display": "<1 ms"
+  },
+  "usage": {
+    "note": "aggregate tokens/cost from provider responses; for mock this is zero-by-construction",
+    "provider": "mock"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "summary": {
+    "total": 36,
+    "answerable_answered": 18,
+    "refused": 18
+  },
+  "examples": {
+    "answerable": {
+      "question": "What does the policy say about exec budget? (The executive discretionary budget is capped)",
+      "role": "exec",
+      "label": "answerable",
+      "answer": "The executive discretionary budget is capped at 5 percent of annual revenue.",
+      "citations": [
+        "[finance-000 \u00a7 exec_budget]"
+      ],
+      "refusal": false,
+      "hits": [
+        "finance-000",
+        "hr-001",
+        "hr-002"
+      ],
+      "usage": {
+        "tokens": 0,
+        "cost": 0.0,
+        "cost_basis": "mock-zero-by-construction",
+        "provider": "mock"
+      },
+      "error": null
+    },
+    "unanswerable": {
+      "question": "What is the company policy on pet insurance?",
+      "role": "hr",
+      "label": "unanswerable",
+      "answer": "REFUSAL: insufficient permitted evidence",
+      "citations": [],
+      "refusal": true,
+      "hits": [
+        "hr-002",
+        "hr-003",
+        "hr-004"
+      ],
+      "usage": {
+        "tokens": 0,
+        "cost": 0.0,
+        "cost_basis": "mock-zero-by-construction",
+        "provider": "mock"
+      },
+      "error": null
+    },
+    "restricted": {
+      "question": "What does the policy say about litigation privilege? (Active litigation details are privileged and)",
+      "role": "finance",
+      "label": "restricted",
+      "answer": "REFUSAL: insufficient permitted evidence",
+      "citations": [],
+      "refusal": true,
+      "hits": [
+        "hr-002",
+        "hr-003",
+        "it-005"
+      ],
+      "usage": {
+        "tokens": 0,
+        "cost": 0.0,
+        "cost_basis": "mock-zero-by-construction",
+        "provider": "mock"
+      },
+      "error": null
+    }
+  }
+}

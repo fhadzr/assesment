@@ -1,0 +1,11 @@
+{
+  "dataset": "synthetic_rag_eval",
+  "seed": 42,
+  "n_questions": 36,
+  "generator_version": "1.0.0",
+  "label_counts": {
+    "answerable": 18,
+    "unanswerable": 9,
+    "restricted": 9
+  }
+}

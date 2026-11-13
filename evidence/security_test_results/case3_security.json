@@ -1,0 +1,72 @@
+{
+  "generated_at_utc": "2026-11-13T03:15:12Z",
+  "source_suite": "case3_rag/tests/test_security.py",
+  "command": "python scripts/export_security_results.py case3_rag",
+  "summary": {
+    "total": "9",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "exit_code": 0
+  },
+  "assertions": [
+    {
+      "test": "test_restricted_doc_never_in_prompt",
+      "class": "case3_rag.tests.test_security",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "test": "test_injection_ignored",
+      "class": "case3_rag.tests.test_security",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "test": "test_out_of_kb_generic_refusal",
+      "class": "case3_rag.tests.test_security",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "test": "test_cross_role_refused",
+      "class": "case3_rag.tests.test_security",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "test": "test_citations_only_retrieved_permitted",
+      "class": "case3_rag.tests.test_security",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "test": "test_role_not_manipulable_via_question",
+      "class": "case3_rag.tests.test_security",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "test": "test_format_valid_but_unretrieved_citation_rejected",
+      "class": "case3_rag.tests.test_security",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "test": "test_restricted_and_unanswerable_same_generic_refusal",
+      "class": "case3_rag.tests.test_security",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "test": "test_invalid_role_fail_closed",
+      "class": "case3_rag.tests.test_security",
+      "status": "pass",
+      "detail": ""
+    }
+  ],
+  "surfaces": [
+    "fastapi_api",
+    "cli"
+  ]
+}

@@ -64,6 +64,18 @@ case2-evaluate: ## Run case2 evaluation (mock provider, offline)
 case2-serve: ## Run case2 FastAPI service (manual)
 	@$(call venv_py,case2_docintel) -m uvicorn docintel.service.app:create_app --factory --app-dir case2_docintel/src --host 127.0.0.1 --port 8001
 
+# ---- case3 rag workflow ----
+
+case3-corpus: ## Generate case3 KB + evaluation dataset (seeded)
+	@$(call venv_py,case3_rag) -m rag.generate_kb --seed 42 --n-docs 10 --out case3_rag/data
+	@$(call venv_py,case3_rag) -m rag.generate_eval --seed 42 --n-questions 36 --data-dir case3_rag/data
+
+case3-evaluate: ## Run case3 evaluation (mock provider, offline)
+	@$(call venv_py,case3_rag) -m rag.evaluate --eval case3_rag/data/eval.json --kb case3_rag/data/kb.json --provider mock --out case3_rag/outputs/evaluation.json
+
+case3-serve: ## Run case3 FastAPI service (manual)
+	@$(call venv_py,case3_rag) -m uvicorn rag.service.app:create_app --factory --app-dir case3_rag/src --host 127.0.0.1 --port 8002
+
 # ---- case1 fraud workflow ----
 
 case1-generate: ## Generate case1 relational dataset (seeded)

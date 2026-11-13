@@ -18,7 +18,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-CASES = {"case1_fraud", "case2_docintel"}
+CASES = {"case1_fraud", "case2_docintel", "case3_rag"}
 PREFIX = {"case1_fraud": "case1", "case2_docintel": "case2", "case3_rag": "case3"}
 
 
