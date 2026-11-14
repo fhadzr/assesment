@@ -9,6 +9,8 @@ This assessment was built with AI assistance. This log records where AI tools we
 | 2026-11-11 | Claude Code | Repository scaffolding: directory structure, OpenSpec setup, CLAUDE.md | Reviewed; committed as-is |
 | 2026-11-11 | Claude Code | `assessment-foundation` change: proposal, specs, design, tasks artifacts | Reviewed before apply |
 | 2026-11-11 | Claude Code | Foundation implementation: per-case packaging, pytest config, convention checkers, Makefile, docs | Spot-checked; all verifications re-run via `make test` / `make check` |
+| 2026-11-13 | Claude Code | Case 3 (RAG) implementation, Case 2 (docintel) implementation, and `rag-injection-hardening` change: malicious-query gate, context sanitization, untrusted-data prompt framing, output safeguard + regression tests after runtime prompt-injection finding | Reviewed; all validations re-run (`make test`, `make check`, `openspec validate`, security evidence regenerated) |
+| 2026-11-14 | Claude Code | Case 3 final security review refinements: sentence-scoped output safeguard (whole-answer refusal), citation enforcement (≥1 valid citation required), Groq system/user message split, latent real-provider citation-format crash fix, +13 regression tests, evidence regenerated (18/18) | Reviewed; `make test` / `make check` / `openspec validate` re-run, eval metrics verified identical |
 
 ## Notes
 

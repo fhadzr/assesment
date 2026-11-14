@@ -1,9 +1,9 @@
 {
-  "generated_at_utc": "2026-11-13T03:15:12Z",
+  "generated_at_utc": "2026-11-14T03:51:59Z",
   "source_suite": "case3_rag/tests/test_security.py",
   "command": "python scripts/export_security_results.py case3_rag",
   "summary": {
-    "total": "9",
+    "total": "18",
     "failures": "0",
     "errors": "0",
     "skipped": "0",
@@ -53,6 +53,30 @@
       "detail": ""
     },
     {
+      "test": "test_substantive_answer_with_empty_citations_refused",
+      "class": "case3_rag.tests.test_security",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "test": "test_substantive_answer_with_all_citations_invalid_refused",
+      "class": "case3_rag.tests.test_security",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "test": "test_substantive_answer_with_valid_citation_passes",
+      "class": "case3_rag.tests.test_security",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "test": "test_valid_and_invalid_citation_mix_keeps_only_valid",
+      "class": "case3_rag.tests.test_security",
+      "status": "pass",
+      "detail": ""
+    },
+    {
       "test": "test_restricted_and_unanswerable_same_generic_refusal",
       "class": "case3_rag.tests.test_security",
       "status": "pass",
@@ -60,6 +84,36 @@
     },
     {
       "test": "test_invalid_role_fail_closed",
+      "class": "case3_rag.tests.test_security",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "test": "test_malicious_query_refused_before_retrieval_and_provider",
+      "class": "case3_rag.tests.test_security",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "test": "test_sanitized_prompt_excludes_injection_sentences",
+      "class": "case3_rag.tests.test_security",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "test": "test_injection_text_never_returned_as_answer",
+      "class": "case3_rag.tests.test_security",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "test": "test_malicious_query_same_refusal_as_unanswerable",
+      "class": "case3_rag.tests.test_security",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "test": "test_benign_queries_unaffected_by_hardening",
       "class": "case3_rag.tests.test_security",
       "status": "pass",
       "detail": ""
